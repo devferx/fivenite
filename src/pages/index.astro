@@ -1,7 +1,38 @@
 ---
+import Card from "../components/Card.astro";
+import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+
+const cardsData = [
+  {
+    title: "NUEVAS ZONAS DE CAZA",
+    body: "NO SOLO HABRÁ NUEVOS CAZADORES, SINO TAMBIÉN NUEVAS UBICACIONES MÁS ALLÁ DEL BUCLE. LUCHAD POR VUESTRO HONOR EN UNA ANTIGUA ARENA, PULID VUESTRAS HABILIDADES DE SUPERVIVENCIA EN LA JUNGLA Y EXPLORAD LAS ARENAS MOVEDIZAS CRISTALINAS QUE FLUYEN DESDE EL PUNTO CERO EXPUESTO.",
+    img: "/assets/images/image-2.png",
+    altImg: "Point Zero",
+  },
+  {
+    title: "AYUDA PREVIO PAGO",
+    body: "COMO CAZADORES, ES VUESTRO DEBER AYUDAR A LOS PERSONAJES DE LA ISLA EN ESTA NUEVA REALIDAD INESTABLE. ACEPTAD SUS MISIONES Y CONTRATOS, OBTENED INFORMACIÓN EN LOS ALREDEDORES O CONTRATADLOS COMO ALIADOS. ¿NO QUERÉIS NEGOCIAR? DESAFIADLOS A UN DUELO Y RECOGED LAS RECOMPENSAS.",
+    img: "./assets/images/image-3.png",
+    altImg: "Sniper's lens",
+  },
+];
 ---
 
-<Layout />
+<Layout>
+  <header>
+    <Hero />
+  </header>
+  {
+    cardsData.map((card) => (
+      <Card
+        title={card.title}
+        body={card.body}
+        img={card.img}
+        altImg={card.altImg}
+      />
+    ))
+  }
+</Layout>
 
 <style></style>

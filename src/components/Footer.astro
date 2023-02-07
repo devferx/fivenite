@@ -1,0 +1,32 @@
+---
+const footerData = [
+  ["Inicio", "Pase de batalla", "Ver", "Consigue Fivenite"],
+  ["Noticias", "Preguntas frecuentes", "CLUF", "Competitivo"],
+  ["Ayuda", "Seguridad y protección", "Reglas de la comunidad"],
+];
+---
+
+<footer class="min-h-72 bg-black-night px-20 pt-14">
+  <a class="block" href="#">
+    <h3
+      class="font-anton text-2xl font-extrabold uppercase tracking-wide text-white"
+    >
+      Fivenite
+    </h3>
+  </a>
+  <div class="flex flex-col py-10 leading-6 text-grey-soft md:flex-row">
+    {
+      footerData.map((list, index) => (
+        <ul>
+          {list.map((item) => (
+            <li class="mt-6 md:mt-0 md:mr-16">
+              <a class="font-semibold hover:text-white" href="#">
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ))
+    }
+  </div>
+</footer>

@@ -1,0 +1,64 @@
+---
+import GlobeIcon from "./icons/Globe.astro";
+import SearchIcon from "./icons/Search.astro";
+import UserIcon from "./icons/User.astro";
+
+const labels = [
+  "PASE DE BATALLA",
+  "MODO CREATIVO",
+  "SALVAR EL MUNDO",
+  "COMPETITIVO",
+  "NOTICIAS",
+  "AYUDA",
+];
+---
+
+<nav class="flex h-14 w-full items-center justify-between bg-black-night">
+  <div class="flex items-center">
+    <a class="ml-4 w-10" href="#">
+      <img class="w-full" src="/assets/images/logo.png" alt="" />
+    </a>
+    <a class="mx-6" href="#">
+      <h3
+        class="font-anton text-2xl font-extrabold uppercase tracking-wide text-white"
+      >
+        Fivenite
+      </h3>
+    </a>
+
+    <ul class="nav-list hidden text-xs text-grey-soft xl:flex">
+      {
+        labels.map((label, idx) => {
+          return (
+            <li class:list={{ "mr-8": idx !== labels.length - 1 }}>
+              <a class="font-open font-semibold hover:text-white" href="#">
+                {label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <div class="flex h-full items-center">
+    <div class="mr-14 hidden items-center sm:flex">
+      <a class="mr-8" href="#"><SearchIcon /></a>
+      <a href="#" class="h-6 w-6"><GlobeIcon /></a>
+    </div>
+
+    <a
+      class="mr-8 hidden items-center font-open text-xs font-semibold text-white sm:flex"
+      href="#"
+    >
+      <span class="mr-2">
+        <UserIcon />
+      </span>
+      INICIAR SESIÓN
+    </a>
+    <a
+      class="flex h-full items-center bg-primary px-8 text-center font-semibold"
+      href="#">DESCARGAR</a
+    >
+  </div>
+</nav>
